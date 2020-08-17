@@ -1,12 +1,22 @@
 import React from "react";
-import { Button } from "antd";
+
+import { renderRoutes } from 'react-router-config';
+import { HashRouter } from "react-router-dom";
+
+import routes from './router';
+
+import LHAppHeader from "@/components/app_header";
+import LHAppFooter from "@/components/app_footer";
+
+
 
 function App() {
   return (
-    <div className="App">
-      App
-      <Button type="ghost" danger>55</Button>
-    </div>
+    <HashRouter>
+      <LHAppHeader />
+      { renderRoutes(routes)}
+      <LHAppFooter />
+    </HashRouter>
   );
 }
 
