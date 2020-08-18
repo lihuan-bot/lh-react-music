@@ -1,9 +1,11 @@
-import React, { memo } from 'react'
+import React, { memo, FC } from 'react';
 
-export default memo(function LHAppFooter() {
+
+const LHAppFooter: FC = () => {
   return (
     <div>
       LHAppFooter
     </div>
   )
-})
+}
+export default memo(LHAppFooter)
