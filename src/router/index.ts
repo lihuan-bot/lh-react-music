@@ -1,20 +1,55 @@
-import React from "react";
-import { Redirect } from "react-router-dom";
-
 import LHDiscover from "@/pages/discover";
 import LHFriend from "@/pages/friend";
 import LHMine from "@/pages/mine";
+import LHAlbum from "@/pages/discover/c-pages/album";
+import LHArtist from "@/pages/discover/c-pages/artist";
+import LHDjradio from "@/pages/discover/c-pages/djradio";
+import LHRanking from "@/pages/discover/c-pages/ranking";
+import LHRecommend from "@/pages/discover/c-pages/recommend";
+import LHSongs from "@/pages/discover/c-pages/songs";
+import { LHRedirect, LHDiscoverRedirect } from "@/pages/redirect";
 
-const routes = [
+export default [
   {
     path: "/",
     exact: true,
-    // render: () => <Redirect to="/discover" />,
-    component: LHDiscover,
+    component: LHRedirect,
   },
   {
     path: "/discover",
     component: LHDiscover,
+    routes: [
+      {
+        path: "/discover",
+        exact: true,
+        component: LHDiscoverRedirect,
+      },
+      {
+        path: "/discover/recommend",
+        component: LHRecommend,
+      },
+      {
+        path: "/discover/ranking",
+        component: LHRanking,
+      },
+      {
+        path: "/discover/songs",
+        component: LHSongs,
+      },
+      {
+        path: "/discover/djradio",
+        exact: true,
+        component: LHDjradio,
+      },
+      {
+        path: "/discover/artist",
+        component: LHArtist,
+      },
+      {
+        path: "/discover/album",
+        component: LHAlbum,
+      },
+    ],
   },
   {
     path: "/mine",
@@ -25,4 +60,3 @@ const routes = [
     component: LHFriend,
   },
 ];
-export default routes;
