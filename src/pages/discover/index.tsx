@@ -1,9 +1,22 @@
-import React, { memo, FC } from "react";
+import React, { memo, FC, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { renderRoutes, RouteConfig } from "react-router-config";
 import { DiscoverWrapper, TopMenu } from "./style";
 import { dicoverMenu } from "@/common/local_data";
+import request from "@/network/request";
+interface Data {
+  code: number;
+  errorStr: string;
+  banners: Array<any>;
+}
 const LHDiscover: FC<RouteConfig> = ({ route }) => {
+  useEffect(() => {
+    request<Data>({
+      url: "/banner",
+    }).then((res) => {
+      console.log(res.banners);
+    });
+  }, []);
   return (
     <DiscoverWrapper>
       <div className="top">
@@ -15,6 +28,7 @@ const LHDiscover: FC<RouteConfig> = ({ route }) => {
               </div>
             );
           })}
+          ‘
         </TopMenu>
       </div>
       {renderRoutes(route.routes)}
