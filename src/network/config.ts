@@ -1,5 +1,5 @@
-const devBaseURL = "http://123.207.32.32:9001";
-const proBaseURL = "http://123.207.32.32:9001";
+const devBaseURL = "http://47.103.221.217:8009";
+const proBaseURL = "http://47.103.221.217:8009";
 export const BASE_URL =
   process.env.NODE_ENV === "development" ? devBaseURL : proBaseURL;
 

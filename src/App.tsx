@@ -1,21 +1,24 @@
-import React from "react";
-
+import React, { memo } from "react";
+import { Provider } from "react-redux";
 import { renderRoutes } from "react-router-config";
 import { HashRouter } from "react-router-dom";
+import store from "./store";
 
 import routes from "./router";
 
 import LHAppHeader from "@/components/app_header";
 import LHAppFooter from "@/components/app_footer";
 
-function App() {
+const App = () => {
   return (
-    <HashRouter>
-      <LHAppHeader />
-      {renderRoutes(routes)}
-      <LHAppFooter />
-    </HashRouter>
+    <Provider store={store}>
+      <HashRouter>
+        <LHAppHeader />
+        {renderRoutes(routes)}
+        <LHAppFooter />
+      </HashRouter>
+    </Provider>
   );
-}
+};
 
-export default App;
+export default memo(App);
