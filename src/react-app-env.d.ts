@@ -29,3 +29,11 @@ declare module "axios" {
     ): Promise<T>;
   }
 }
+declare global {
+  namespace Ajax {
+    interface Response<T = any> {
+      code: number;
+      data: T;
+    }
+  }
+}

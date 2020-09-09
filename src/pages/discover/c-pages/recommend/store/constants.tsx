@@ -1,2 +1,1 @@
 export const CHANGE_TOP_BANNERS = "recommend/CHANGE_TOP_BANNERS";
-export type CHANGE_TOP_BANNERS_TYPE = typeof CHANGE_TOP_BANNERS;

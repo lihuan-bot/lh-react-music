@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
 
 import { recommendReducer } from "@/pages/discover/c-pages/recommend/store";
-const cReducer = combineReducers({
+
+const rootReducer = combineReducers({
   recommend: recommendReducer,
 });
-export default cReducer;
+export type AppState = ReturnType<typeof rootReducer>
+export default rootReducer;

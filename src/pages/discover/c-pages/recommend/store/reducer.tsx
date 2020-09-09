@@ -1,9 +1,11 @@
 import * as actionTypes from "./constants";
+import { IRecommendState } from '../data.d'
 
-const defaultState = {
+import { RecommendActionTypes } from './actionCreators'
+const defaultState:IRecommendState = {
   topBanners: [],
 };
-const reducer = (state = defaultState, action: any) => {
+const reducer = (state = defaultState, action: RecommendActionTypes):IRecommendState => {
   switch (action.type) {
     case actionTypes.CHANGE_TOP_BANNERS:
       return { ...state, topBanners: action.topBanners };
@@ -11,4 +13,5 @@ const reducer = (state = defaultState, action: any) => {
       return state;
   }
 };
+
 export default reducer;

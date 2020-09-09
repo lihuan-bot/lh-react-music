@@ -14,7 +14,7 @@ const LHDiscover: FC<RouteConfig> = ({ route }) => {
     request<Data>({
       url: "/banner",
     }).then((res) => {
-      console.log(res.banners);
+      console.log(res);
     });
   }, []);
   return (
