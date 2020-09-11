@@ -1626,6 +1626,13 @@
     "@types/react" "*"
     hoist-non-react-statics "^3.3.0"
 
+"@types/immutable@^3.8.7":
+  version "3.8.7"
+  resolved "https://registry.npm.taobao.org/@types/immutable/download/@types/immutable-3.8.7.tgz#536d33d30f3f3d9a6d4642a219419fd82af633fb"
+  integrity sha1-U20z0w8/PZptRkKiGUGf2Cr2M/s=
+  dependencies:
+    immutable "*"
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.1.tgz#42995b446db9a48a11a07ec083499a860e9138ff"
@@ -5554,6 +5561,21 @@ immer@1.10.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/immer/-/immer-1.10.0.tgz#bad67605ba9c810275d91e1c2a47d4582e98286d"
   integrity sha512-O3sR1/opvCDGLEVcvrGTMtLac8GJ5IwZC4puPrLuRj3l7ICKvkmA0vGuU9OW8mV9WIBRnaxp5GJh9IEAaNOoYg==
+
+immer@^7.0.9:
+  version "7.0.9"
+  resolved "https://registry.npm.taobao.org/immer/download/immer-7.0.9.tgz#28e7552c21d39dd76feccd2b800b7bc86ee4a62e"
+  integrity sha1-KOdVLCHTnddv7M0rgAt7yG7kpi4=
+
+immutable@*:
+  version "3.8.2"
+  resolved "https://registry.npm.taobao.org/immutable/download/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
+  integrity sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
+
+immutable@^4.0.0-rc.12:
+  version "4.0.0-rc.12"
+  resolved "https://registry.npm.taobao.org/immutable/download/immutable-4.0.0-rc.12.tgz#ca59a7e4c19ae8d9bf74a97bdf0f6e2f2a5d0217"
+  integrity sha1-ylmn5MGa6Nm/dKl73w9uLypdAhc=
 
 import-cwd@^2.0.0:
   version "2.1.0"
