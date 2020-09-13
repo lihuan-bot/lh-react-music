@@ -16,7 +16,7 @@ const LHTopBanner: FC = () => {
   const bannerRef: React.MutableRefObject<any> = useRef();
   // 记录当前轮播图下标
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  // 获取从redux中轮播图数据
+  // 获取redux中轮播图数据
   const { topBanners } = useSelector(
     (state: AppState) => ({
       topBanners: state.recommend.topBanners,
@@ -61,11 +61,11 @@ const LHTopBanner: FC = () => {
         <BannerControl>
           <button
             className="btn left"
-            onClick={(_) => bannerRef.current.prev()}
+            onClick={() => bannerRef.current.prev()}
           ></button>
           <button
             className="btn right"
-            onClick={(_) => bannerRef.current.next()}
+            onClick={() => bannerRef.current.next()}
           ></button>
         </BannerControl>
       </div>
