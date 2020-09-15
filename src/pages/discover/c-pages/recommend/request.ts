@@ -1,4 +1,5 @@
 import request from "@/network/request";
+import { EnumRanking } from "./store/actionCreators";
 export const getTopBanners = () => {
   return request({
     url: "/banner",
@@ -20,11 +21,11 @@ export const getNewAlbum = (limit = 10) => {
     },
   });
 };
-export const getTopList = (idx: number) => {
+export const getTopList = (id: EnumRanking) => {
   return request({
     url: "/top/list",
     params: {
-      idx,
+      id,
     },
   });
 };

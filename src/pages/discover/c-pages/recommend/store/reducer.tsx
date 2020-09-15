@@ -7,6 +7,9 @@ const defaultState: IRecommendState = {
   topBanners: [],
   hotRecommends: [],
   newAlbums: [],
+  upRanking: [],
+  newRanking: [],
+  originRanking: [],
 };
 const reducer = produce(
   (draftState: Draft<IRecommendState>, action: RecommendActionTypes) => {
@@ -20,6 +23,14 @@ const reducer = produce(
       case actionTypes.CHANGE_NEW_ALBUM:
         draftState.newAlbums = castDraft(action.albums);
         break;
+      case actionTypes.CHANGE_UP_RANKING:
+        draftState.upRanking = castDraft(action.upRanking);
+        break;
+      case actionTypes.CHANGE_NEW_RANKING:
+        draftState.newRanking = castDraft(action.newRanking);
+        break;
+      case actionTypes.CHANGE_ORIGIN_RANKING:
+        draftState.originRanking = castDraft(action.originRanking);
     }
   },
   defaultState
