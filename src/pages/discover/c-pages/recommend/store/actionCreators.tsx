@@ -31,15 +31,15 @@ export interface IChangeNewAlbumAction {
 }
 export interface IChangeUpRankingAction {
   type: typeof actionTypes.CHANGE_UP_RANKING;
-  upRanking: IPlaylist[];
+  upRanking: IPlaylist;
 }
 export interface IChangeNewRankingAction {
   type: typeof actionTypes.CHANGE_NEW_RANKING;
-  newRanking: IPlaylist[];
+  newRanking: IPlaylist;
 }
 export interface IChangeOriginRankingAction {
   type: typeof actionTypes.CHANGE_ORIGIN_RANKING;
-  originRanking: IPlaylist[];
+  originRanking: IPlaylist;
 }
 export type RecommendActionTypes =
   | IChangeTopBannerAction
@@ -48,13 +48,13 @@ export type RecommendActionTypes =
   | IChangeOriginRankingAction
   | IChangeUpRankingAction
   | IChangeNewRankingAction;
-export const changeTopBannerAction = (res: ITopBannerRes) => ({
+export const changeTopBannerAction = ({ banners }: ITopBannerRes) => ({
   type: actionTypes.CHANGE_TOP_BANNERS,
-  topBanners: res.banners,
+  topBanners: banners,
 });
-export const changeHotRecommendAction = (res: IHotRecommendRes) => ({
+export const changeHotRecommendAction = ({ result }: IHotRecommendRes) => ({
   type: actionTypes.CHANGE_HOT_RECOMMENDS,
-  hotRecommends: res.result,
+  hotRecommends: result,
 });
 export const changeNewAlbumAction = ({ monthData }: INewAlbumRes) => ({
   type: actionTypes.CHANGE_NEW_ALBUM,

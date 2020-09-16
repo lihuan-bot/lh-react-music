@@ -1,15 +1,15 @@
 import { produce, Draft, castDraft } from "immer";
 import * as actionTypes from "./constants";
-import { IRecommendState } from "../data.d";
+import { IRecommendState, IPlaylist } from "../data.d";
 
 import { RecommendActionTypes } from "./actionCreators";
 const defaultState: IRecommendState = {
   topBanners: [],
   hotRecommends: [],
   newAlbums: [],
-  upRanking: [],
-  newRanking: [],
-  originRanking: [],
+  upRanking: {} as IPlaylist,
+  newRanking: {} as IPlaylist,
+  originRanking: {} as IPlaylist,
 };
 const reducer = produce(
   (draftState: Draft<IRecommendState>, action: RecommendActionTypes) => {
@@ -31,6 +31,7 @@ const reducer = produce(
         break;
       case actionTypes.CHANGE_ORIGIN_RANKING:
         draftState.originRanking = castDraft(action.originRanking);
+        break;
     }
   },
   defaultState

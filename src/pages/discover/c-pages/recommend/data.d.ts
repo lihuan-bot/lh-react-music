@@ -126,7 +126,7 @@ export interface IRecommendState {
   topBanners: ITopBanner[];
   hotRecommends: IHotRecommend[];
   newAlbums: INewAlbum[];
-  upRanking: IPlaylist[];
-  newRanking: IPlaylist[];
-  originRanking: IPlaylist[];
+  upRanking: IPlaylist;
+  newRanking: IPlaylist;
+  originRanking: IPlaylist;
 }
