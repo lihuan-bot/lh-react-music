@@ -39,7 +39,8 @@ export const Control = styled.div`
     width: 36px;
     height: 36px;
     margin: 0 8px;
-    background-position: 0 ${(props) => (props.isPlaying ? "-165px" : "-204px")};
+    background-position: 0
+      ${(props: any) => (props.isPlaying ? "-165px" : "-204px")};
   }
 
   .next {
@@ -143,7 +144,7 @@ export const Operator = styled.div`
     }
 
     .loop {
-      background-position: ${(props) => {
+      background-position: ${(props: any) => {
         switch (props.sequence) {
           case 1:
             return "-66px -248px";

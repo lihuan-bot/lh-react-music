@@ -11,3 +11,7 @@ export const getCount = (count: number) => {
 export const getSizeImage = (imgUrl: string, size: number) => {
   return `${imgUrl}?param=${size}x${size}`;
 };
+
+export function getPlaySong(id: number) {
+  return `https://music.163.com/song/media/outer/url?id=${id}.mp3`;
+}

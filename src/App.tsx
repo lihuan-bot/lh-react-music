@@ -8,6 +8,7 @@ import routes from "./router";
 
 import LHAppHeader from "@/components/app_header";
 import LHAppFooter from "@/components/app_footer";
+import AppPlayerBar from "@/pages/player/app-player-bar";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <LHAppHeader />
         {renderRoutes(routes)}
         <LHAppFooter />
+        <AppPlayerBar />
       </HashRouter>
     </Provider>
   );

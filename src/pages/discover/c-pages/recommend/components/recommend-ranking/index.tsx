@@ -1,5 +1,5 @@
 import React, { FC, memo, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import LHThemeHeaderRecommend from "@/components/theme-header-recommend";
 import LHTopRanking from "@/components/top-ranking";
 import { RankingWrapper } from "./style";
@@ -13,7 +13,8 @@ const LHRecommendRanking: FC = () => {
       upRanking: state.recommend.upRanking,
       newRanking: state.recommend.newRanking,
       originRanking: state.recommend.originRanking,
-    })
+    }),
+    shallowEqual
   );
   const dispatch = useDispatch();
   useEffect(() => {
