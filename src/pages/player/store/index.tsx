@@ -1,2 +1,3 @@
 import playerReducer from "./reducer";
-export { playerReducer };
+import { getSongDetailAction } from './actionCreators'
+export { playerReducer,getSongDetailAction };

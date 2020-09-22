@@ -3,10 +3,16 @@ import React, { memo, FC } from "react";
 import { TopRankingWrapper } from "./style";
 import { getSizeImage } from "@/utils/format-utils";
 import { IPlaylist } from "@/pages/discover/c-pages/recommend/data";
+import { getSongDetailAction } from '@/pages/player/store'
+import { useDispatch } from "react-redux";
 interface IProps {
   info: IPlaylist;
 }
 const LHTopRanking: FC<IProps> = ({ info }) => {
+  const dispatch = useDispatch()
+  const playMusic = (id:number) => {
+    dispatch(getSongDetailAction(id))
+  }
   return (
     <TopRankingWrapper>
       <div className="header">
@@ -32,7 +38,7 @@ const LHTopRanking: FC<IProps> = ({ info }) => {
               <div className="info">
                 <span className="name text-nowrap">{item.name}</span>
                 <div className="operate">
-                  <button className="btn sprite_02 play"></button>
+                  <button className="btn sprite_02 play" onClick={_ => playMusic(item?.id)}></button>
                   <button className="btn sprite_icon2 addto"></button>
                   <button className="btn sprite_02 favor"></button>
                 </div>

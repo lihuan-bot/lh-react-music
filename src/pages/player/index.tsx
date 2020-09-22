@@ -1,8 +1,8 @@
-import React, { memo } from "react";
+import React, { memo,FC } from "react";
 
 import { PlayerWrapper, PlayerLeft, PlayerRight } from "./style";
 
-export default memo(function HYPlayer() {
+const  LHPlayer: FC = () => {
   return (
     <PlayerWrapper>
       <div className="content wrap-v2">
@@ -18,4 +18,7 @@ export default memo(function HYPlayer() {
       </div>
     </PlayerWrapper>
   );
-});
+}
+
+
+export default memo(LHPlayer)

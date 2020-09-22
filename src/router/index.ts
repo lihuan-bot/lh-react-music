@@ -7,6 +7,7 @@ import LHDjradio from "@/pages/discover/c-pages/djradio";
 import LHRanking from "@/pages/discover/c-pages/ranking";
 import LHRecommend from "@/pages/discover/c-pages/recommend";
 import LHSongs from "@/pages/discover/c-pages/songs";
+import LHPlay from '@/pages/player'
 import { LHRedirect, LHDiscoverRedirect } from "@/pages/redirect";
 
 export default [
@@ -48,6 +49,10 @@ export default [
       {
         path: "/discover/album",
         component: LHAlbum,
+      },
+      {
+        path: "/discover/player",
+        component: LHPlay,
       },
     ],
   },

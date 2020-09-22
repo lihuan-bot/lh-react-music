@@ -26,6 +26,14 @@ export interface ISongRes {
   privileges: IPrivileges[];
   code: number;
 }
+export enum EnumSequence {
+  Cycle,
+  Random,
+  Single,
+}
 export interface IPlayeSongrState {
   currentSong: ISongs;
+  playList: ISongs[];
+  currentSongIndex: number;
+  sequence: EnumSequence;
 }
