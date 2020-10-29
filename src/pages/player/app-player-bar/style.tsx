@@ -1,14 +1,13 @@
-
 import styled from "styled-components";
 
- enum EnumSequence {
+enum EnumSequence {
   Cycle,
   Random,
   Single,
 }
 interface IProps {
   isPlaying: boolean;
-  sequence:number
+  sequence: number;
 }
 export const PlaybarWrapper = styled.div`
   position: fixed;
@@ -50,7 +49,8 @@ export const Control = styled.div`
     height: 36px;
     margin: 0 8px;
     background-position: 0
-      ${(props: Pick<IProps, 'isPlaying'>) => (props.isPlaying ? "-165px" : "-204px")};
+      ${(props: Pick<IProps, "isPlaying">) =>
+        props.isPlaying ? "-165px" : "-204px"};
   }
 
   .next {
@@ -154,7 +154,7 @@ export const Operator = styled.div`
     }
 
     .loop {
-      background-position: ${(props: Pick<IProps, 'sequence'>) => {
+      background-position: ${(props: Pick<IProps, "sequence">) => {
         switch (props.sequence) {
           case EnumSequence.Random:
             return "-66px -248px";

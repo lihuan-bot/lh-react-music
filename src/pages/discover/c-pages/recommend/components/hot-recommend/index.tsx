@@ -23,7 +23,7 @@ const LHHotRecommend: FC = () => {
         keywords={["华语", "流行", "民谣", "摇滚", "电子"]}
       />
       <div className="recommend-list">
-        {hotRecommends.map((item) => {
+        {hotRecommends?.map((item) => {
           return <LHSongsCover key={item.id} info={item} />;
         })}
       </div>

@@ -4,17 +4,20 @@ import { renderRoutes, RouteConfig } from "react-router-config";
 import { DiscoverWrapper, TopMenu } from "./style";
 import { dicoverMenu } from "@/common/local_data";
 import request from "@/network/request";
+
 interface Data {
   code: number;
   errorStr: string;
   banners: Array<any>;
 }
+
 const LHDiscover: FC<RouteConfig> = ({ route }) => {
+
   useEffect(() => {
     request<Data>({
       url: "/banner",
     }).then((res) => {
-      // console.log(res);
+      // console.log(res)
     });
   }, []);
   return (

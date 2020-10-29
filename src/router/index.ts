@@ -1,3 +1,4 @@
+import React from 'react'
 import LHDiscover from "@/pages/discover";
 import LHFriend from "@/pages/friend";
 import LHMine from "@/pages/mine";
@@ -9,8 +10,14 @@ import LHRecommend from "@/pages/discover/c-pages/recommend";
 import LHSongs from "@/pages/discover/c-pages/songs";
 import LHPlay from '@/pages/player'
 import { LHRedirect, LHDiscoverRedirect } from "@/pages/redirect";
+interface RouteConfig {
+  path: string;
+  exact?: boolean;
+  component: React.ComponentType<any> | React.ComponentType;
+  routes?: RouteConfig[];
+}
 
-export default [
+const router: RouteConfig[] = [
   {
     path: "/",
     exact: true,
@@ -65,3 +72,6 @@ export default [
     component: LHFriend,
   },
 ];
+
+
+export default router;

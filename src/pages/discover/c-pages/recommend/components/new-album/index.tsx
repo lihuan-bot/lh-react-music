@@ -31,7 +31,7 @@ const LHNewAlbum: FC = () => {
             {[0, 1].map((item) => {
               return (
                 <div className="page" key={item}>
-                  {newAlbums.slice(item * 5, (item + 1) * 5).map((i) => {
+                  {newAlbums?.slice(item * 5, (item + 1) * 5).map((i) => {
                     return (
                       <LHAlbumCover
                         key={i.id}

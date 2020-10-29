@@ -28,12 +28,14 @@ const LHTopBanner: FC = () => {
     dispatch(getTopBannerAction());
   }, [dispatch]);
   const bannerChange = useCallback((_, to: number) => {
-    setCurrentIndex(to);
+    setTimeout(() => {
+      setCurrentIndex(to);
+    }, 0);
   }, []);
   const bgImage =
     // topBanners[currentIndex] && `${topBanners[currentIndex]?.imageUrl}?imageView&blur=40x20`;
     // 使用es2020语法
-    `${topBanners[currentIndex]?.imageUrl}?imageView&blur=40x20`;
+    `${topBanners?.[currentIndex]?.imageUrl}?imageView&blur=40x20`;
   return (
     <BannerWrapper bgImage={bgImage}>
       <div className="banner wrap-v2">
@@ -44,7 +46,7 @@ const LHTopBanner: FC = () => {
             ref={bannerRef}
             beforeChange={bannerChange}
           >
-            {topBanners.map((item) => {
+            {topBanners?.map((item) => {
               return (
                 <div className="banner-item" key={item.imageUrl}>
                   <img

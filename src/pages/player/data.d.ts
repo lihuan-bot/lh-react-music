@@ -31,9 +31,20 @@ export enum EnumSequence {
   Random,
   Single,
 }
+export interface ILyricList {
+  time: number;
+  content: string;
+}
+export interface ILyricRes {
+  code: number;
+  lrc: { lyric: string; version: number };
+  [propsName: string]: any;
+}
 export interface IPlayeSongrState {
   currentSong: ISongs;
   playList: ISongs[];
   currentSongIndex: number;
   sequence: EnumSequence;
+  lyricList: ILyricList[];
+  currentLyricIndex: number;
 }
