@@ -7,7 +7,7 @@ import { AppState } from "@/store/reducer";
 import { AlbumWrapper } from "./style";
 import { Carousel } from "antd";
 const LHNewAlbum: FC = () => {
-  const pageRef: React.MutableRefObject<any> = useRef();
+  const pageRef = useRef<Carousel>(null);
   const { newAlbums } = useSelector(
     (state: AppState) => ({
       newAlbums: state.recommend.newAlbums,
@@ -24,7 +24,7 @@ const LHNewAlbum: FC = () => {
       <div className="content">
         <button
           className="arrow arrow-left sprite_02"
-          onClick={() => pageRef.current.prev()}
+          onClick={() => pageRef.current?.prev()}
         ></button>
         <div className="album">
           <Carousel dots={false} ref={pageRef}>
@@ -49,7 +49,7 @@ const LHNewAlbum: FC = () => {
         </div>
         <button
           className="arrow arrow-right sprite_02"
-          onClick={() => pageRef.current.next()}
+          onClick={() => pageRef.current?.next()}
         ></button>
       </div>
     </AlbumWrapper>

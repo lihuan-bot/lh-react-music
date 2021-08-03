@@ -12,7 +12,6 @@ interface Data {
 }
 
 const LHDiscover: FC<RouteConfig> = ({ route }) => {
-
   useEffect(() => {
     request<Data>({
       url: "/banner",

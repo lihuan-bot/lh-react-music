@@ -1,3 +1,9 @@
+/*
+ * @Author: lihuan
+ * @Date: 2020-10-28 14:37:57
+ * @LastEditTime: 2021-08-03 09:00:54
+ * @Email: 17719495105@163.com
+ */
 import React, {
   memo,
   FC,
@@ -13,7 +19,7 @@ import { BannerControl, BannerLeft, BannerRight, BannerWrapper } from "./style";
 import { Carousel } from "antd";
 const LHTopBanner: FC = () => {
   // 获取轮播图dom
-  const bannerRef: React.MutableRefObject<any> = useRef();
+  const bannerRef = useRef<Carousel>(null);
   // 记录当前轮播图下标
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   // 获取redux中轮播图数据
@@ -63,11 +69,11 @@ const LHTopBanner: FC = () => {
         <BannerControl>
           <button
             className="btn left"
-            onClick={() => bannerRef.current.prev()}
+            onClick={() => bannerRef.current?.prev()}
           ></button>
           <button
             className="btn right"
-            onClick={() => bannerRef.current.next()}
+            onClick={() => bannerRef.current?.next()}
           ></button>
         </BannerControl>
       </div>
