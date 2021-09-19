@@ -29,7 +29,8 @@ const LHAppPlayerBar: FC = () => {
   const [isChanging, setIsChanging] = useState<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
-  const audioRef: React.MutableRefObject<any> = useRef();
+  // const audioRef: React.MutableRefObject<any> = useRef();
+  const audioRef = useRef<HTMLAudioElement>(null);
   const { currentSong, sequence, lyricList, currentLyricIndex } = useSelector(
     (state: AppState) => ({
       currentSong: state.player.currentSong,
@@ -46,9 +47,9 @@ const LHAppPlayerBar: FC = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    audioRef.current.src = getPlaySong(currentSong?.id);
+    audioRef.current!.src = getPlaySong(currentSong?.id);
     audioRef.current
-      .play()
+      ?.play()
       .then(() => {
         setIsPlaying(true);
       })
@@ -58,7 +59,7 @@ const LHAppPlayerBar: FC = () => {
   }, [currentSong]);
 
   const playMusic = useCallback(() => {
-    isPlaying ? audioRef.current.pause() : audioRef.current.play();
+    isPlaying ? audioRef.current?.pause() : audioRef.current?.play();
     setIsPlaying(!isPlaying);
   }, [isPlaying]);
 
@@ -75,7 +76,7 @@ const LHAppPlayerBar: FC = () => {
   const sliderAfterChange = useCallback(
     (value) => {
       const time = ((value / 100) * dt) / 1000;
-      audioRef.current.currentTime = time;
+      audioRef.current!.currentTime = time;
       setCurrentTime(time * 1000);
       setIsChanging(false);
       if (!isPlaying) {
@@ -127,8 +128,8 @@ const LHAppPlayerBar: FC = () => {
   };
   const handleMusicEnded = () => {
     if (sequence === 2) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play();
+      audioRef.current!.currentTime = 0;
+      audioRef.current?.play();
     } else {
       dispatch(changeCurrentSongAndIndexAction(1));
     }
